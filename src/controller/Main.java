@@ -10,7 +10,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in); 
-		
+		Cliente cl = new Cliente();
+		Conta cc = new ContaCorrente(cl);
 		boolean global = true;
 		
 		while (global == true) {
@@ -71,8 +72,7 @@ public class Main {
 					System.out.println("  ");
 					System.out.println("Você abriu uma conta corrente por favor\n preencha os dados abaixo:");
 					
-					Cliente cl = new Cliente();
-					Conta cc = new ContaCorrente(cl);
+					
 					System.out.println("  ");
 					System.out.println("  ");
 					System.out.println("  ");
@@ -206,53 +206,31 @@ public class Main {
 						System.out.println("4 - ver extrato e informações da conta");
 						
 						
-						Cliente cl = new Cliente();
-						Conta cc = new ContaCorrente(cl);
-						System.out.println("  ");
-						System.out.println("  ");
-						System.out.println("  ");
-						System.out.println("  ");
-						System.out.println("  ");
-						System.out.println("  ");
-						System.out.println("  ");
-						System.out.println("  ");
-						System.out.println("  ");
-						System.out.println("  ");
-						cl.setNome(null);
-						System.out.println(" ");
-						System.out.println(" ");
 						
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						cc.sacar(0);
 						
-						System.out.println(cl.getNome()); 
-						System.out.println(cc.getAgencia());
-						System.out.println(cc.getNumero());
-						System.out.println(cc.getSaldo());
-						
-						while(cf == 1) {
-							choices = 0;
-							System.out.println("");
-							System.out.println("Digite 1 para voltar ao menu: ");
-							choices = sc.nextInt();
-							switch (choices) {
-							
-							case 1:
-								cf = 0;
-								break;
-							}}
-						
-						
+		
 						break;
+		
 						
 					case 2:
 						System.out.println("  ");
-						System.out.println("Você entrou na sua conta poupança corrente por favor\n informe as ações abaixo:");
+						System.out.println("Você entrou na sua conta corrente por favor\n informe as ações abaixo:");
 						System.out.println("1 - Sacar da conta");
 						System.out.println("2 - Depositar na conta");
 						System.out.println("3 - Transferir para outra conta");
+						System.out.println("4 - ver extrato e informações da conta");
 						
-						
-						Cliente cl1 = new Cliente();
-						Conta cc1 = new ContaCorrente(cl1);
 						System.out.println("  ");
 						System.out.println("  ");
 						System.out.println("  ");
@@ -263,34 +241,57 @@ public class Main {
 						System.out.println("  ");
 						System.out.println("  ");
 						System.out.println("  ");
-						cl1.setNome(null);
-						System.out.println(" ");
-						System.out.println(" ");
-						
-						
-						System.out.println(cl1.getNome()); 
-						System.out.println(cc1.getAgencia());
-						System.out.println(cc1.getNumero());
-						System.out.println(cc1.getSaldo());
-						
-						while(cf == 1) {
-							choices = 0;
-							System.out.println("");
-							System.out.println("Digite 1 para voltar ao menu: ");
-							choices = sc.nextInt();
-							switch (choices) {
-							
-							case 1:
-								cf = 0;
-								break;
-							}}
+						cc.depositar(0);
 						
 						
 						break;
+						
 						
 					case 3:
-						cf = 0;
+						System.out.println("  ");
+						System.out.println("Você entrou na sua conta corrente por favor\n informe as ações abaixo:");
+						System.out.println("1 - Sacar da conta");
+						System.out.println("2 - Depositar na conta");
+						System.out.println("3 - Transferir para outra conta");
+						System.out.println("4 - ver extrato e informações da conta");
+						
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						cc.transferir(0, cc);
+						
 						break;
+						
+						
+					case 4:
+						System.out.println("  ");
+						System.out.println("Você entrou na sua conta corrente por favor\n informe as ações abaixo:");
+						System.out.println("1 - Sacar da conta");
+						System.out.println("2 - Depositar na conta");
+						System.out.println("3 - Transferir para outra conta");
+						System.out.println("4 - ver extrato e informações da conta");
+						
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						System.out.println("  ");
+						cc.imprimirExtrato();	
+						break;
+					
+						
 						
 					default:
 						System.out.println("  ");

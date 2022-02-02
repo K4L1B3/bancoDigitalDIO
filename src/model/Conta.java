@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Scanner;
+
 import repository.IConta;
 
 public abstract class Conta implements IConta {
@@ -25,13 +27,31 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public void depositar(double valor) {
-		saldo += valor;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite o valor a ser depositado: ");
+		valor = sc.nextDouble();
+		this.saldo += valor;
 	}
 
 	@Override
 	public void transferir(double valor, IConta contaDestino) {
 		this.sacar(valor);
-		contaDestino.depositar(valor);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite o valor a ser sacado: ");
+		valor = sc.nextDouble();
+		System.out.println("Digite 1 se deseja transferir para conta corrente");
+		System.out.println("Digite 2 se dejsa transferir para conta poupança");
+		int i = sc.nextInt();
+		if(i == 1) {
+			System.out.println("Você depositou na conta corrente");
+			//contaDestino = 
+			contaDestino.depositar(valor);
+		}else if (i == 2) {
+			System.out.println("Você depositou na conta poupança");
+			//contaDestino =
+			contaDestino.depositar(valor);
+		}
+		
 	}
 
 	public int getAgencia() {
@@ -45,7 +65,7 @@ public abstract class Conta implements IConta {
 	}
 
 	public double getSaldo() {
-		System.out.println("O saldo da sua conta é: ");
+		System.out.println("O saldo da sua conta é: \n" + saldo);
 		return saldo;
 	}
 
