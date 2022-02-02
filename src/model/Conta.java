@@ -35,14 +35,17 @@ public abstract class Conta implements IConta {
 	}
 
 	public int getAgencia() {
+		System.out.println("A agencia da sua conta é: ");
 		return agencia;
 	}
 
 	public int getNumero() {
+		System.out.println("O numero da sua conta é: ");
 		return numero;
 	}
 
 	public double getSaldo() {
+		System.out.println("O saldo da sua conta é: ");
 		return saldo;
 	}
 
